@@ -1,0 +1,11 @@
+from contactsPage and appointmentPage have <TileList>
+the prop name should be the same on both pages which is Tiles 
+coz they are using the same <TieList>, 
+
+if we use props.contact.map((obj,i)=>{
+     
+     const{name,...description}=obj
+     
+     return  <Tile name={name} description={description} key={i}/>
+     
+appointment page cannot render=>ref error
