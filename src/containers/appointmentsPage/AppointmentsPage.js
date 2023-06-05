@@ -39,7 +39,7 @@ export const AppointmentsPage = (props) => {
     <div>
       <section>
         <h2>Add Appointment</h2>
-        <AppointmentForm state={state} setState={setState} handleSubmit={handleSubmit}/>
+        <AppointmentForm state={state} setState={setState} handleSubmit={handleSubmit} contact={props.contact}/>
       </section>
       <hr />
       <section>
