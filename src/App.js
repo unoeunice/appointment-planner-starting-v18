@@ -26,10 +26,10 @@ function App() {
 
  }
 
- const addAppointment=(name,contact,date,time)=>{
+ const addAppointment=(name,contactSelected,date,time)=>{
 
   setAppointment((prev)=>{
-  return [...prev,{name,contact,date,time}]
+  return [...prev,{name,contactSelected,date,time}]
   }
 )
 
