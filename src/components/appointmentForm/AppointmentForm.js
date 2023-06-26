@@ -10,32 +10,31 @@ const getTodayString = () => {
 
 export const AppointmentForm = ({
   
-  contact,
-  state,
-  setState,
-  handleSubmit
+ name,date,time,handleSubmit,contact,setName,setDate,setTime,contactSelected,setContactSelected
 }) => {
 
-  const getContactNames = () => {
-    return contact.map((contact) => contact.name);
-  };
+  
 
+
+  console.log(contact)
 
 
   
   return (
     <form onSubmit={handleSubmit}>  
 
-    Name<input name="name" type="text" value={state.name} onChange= {(e) =>setState({[e.target.name]:e.target.value})}/>
-    Date <input name="date" type="date" value={state.date} min={getTodayString()}  onChange= {(e) =>setState({[e.target.name]:e.target.value})}/>
-    Time<input name="time" type="time" value={state.time} onChange= {(e) =>setState({[e.target.name]:e.target.value})}/>
+    Name<input name="name" type="text" value={name} onChange= {(e) =>setName(e.target.value)}/>
+    Date <input name="date" type="date" value={date} min={getTodayString()}  onChange= {(e) =>setDate(e.target.value)}/>
+    Time<input name="time" type="time" value={time} onChange= {(e) =>setTime(e.target.value)}/>
 
   
     <ContactPicker
-          name="contact"
-          value={state.contact}
-          contact={getContactNames()}
-          onChange= {(e) =>setState({[e.target.name]:e.target.value})}
+        contact={contact}
+         name={name}
+         onChange={(e)=>{setContactSelected(e.target.value)}}
+         value={contactSelected}
+
+
         />
     <button type="submit">Submit</button>
 

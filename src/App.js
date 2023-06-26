@@ -14,36 +14,30 @@ function App() {
 
 
 
- const addContact=((newContact)=>{
+ const addContact=(name,phone,email)=>{
   
   setContact((prev)=>{
 
-  return [...prev,newContact]
+  return [...prev,{name:name,phone:phone,email:email}]
 
 
   })
 
 
- })
+ }
 
- const addAppointment=((newAppointment)=>{
+ const addAppointment=(name,contact,date,time)=>{
 
   setAppointment((prev)=>{
-   return[...prev,newAppointment]
+  return [...prev,{name,contact,date,time}]
   }
 )
 
 
 
-})
+}
 
 
-
-
-
-
-
-  
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={ <Root/> }>
